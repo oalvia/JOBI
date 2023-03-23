@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { SpanComponent } from './../pages/home/component-span/span.component';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -42,7 +43,8 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     ProductListComponent,
     ProductDetailComponent,
     MainComponent,
-    ProductsComponent
+    ProductsComponent,
+    TranslateModule
   ]
 })
 export class SharedModule { }

@@ -1,19 +1,20 @@
-<div class="slider">
-  <div class="slider__container">
-      <div (click)="goToPrevious()" class="leftArrow">❰</div>
-      <div (click)="goToNext()" class="rightArrow">❱</div>
-    </div>
-    <div
-      class="card__slider"
-      [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
-    ></div>
-    <div class="dotsContainer">
-      <div
-        *ngFor="let slide of slides; let slideIndex = index"
-        class="dot"
-        (click)="goToSlide(slideIndex)"
-      >
-        ●
-      </div>
-    </div>
+<div class="slider__container">
+  <div (click)="goToPrevious()" class="leftArrow">❰</div>
+  <div (click)="goToNext()" class="rightArrow">❱</div>
+
+<div
+  class="banner"
+  [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+></div>
+<div class="dotsContainer">
+  <div
+    *ngFor="let slide of slides; let slideIndex = index"
+    class="dot"
+    (click)="goToSlide(slideIndex)"
+    [ngClass]="{'active': currentIndex === slideIndex}"
+
+  >
+    ●
   </div>
+</div>
+</div>

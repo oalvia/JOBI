@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { RouterLink, RouterModule } from '@angular/router';
+import { TranslationComponent } from './components/translation/translation.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterLink, RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    LoadingComponent
+    LoadingComponent,
+    TranslationComponent
   ],
   imports: [
     CommonModule,
