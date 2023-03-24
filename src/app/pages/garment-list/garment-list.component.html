@@ -1,22 +1,30 @@
-<div class="cards" >
-    <app-product-list
-        *ngFor="let garmentEl of products | paginate: { id: 'foo',
-        itemsPerPage: 15,
-        currentPage: page,
-        totalItems: 40 }"
-        [product]="garmentEl"
-        (onDetail)="getProductDetail(garmentEl._id)"
-    >
-    </app-product-list>
+<div class="cards">
+  <div class="searchForm">
+    <input
+      type="text"
+      [(ngModel)]="term"
+      class="searchTerm"
+      placeholder="¿Qué estas buscando?"
+    />
+  </div>
+  <app-product-list
+    *ngFor="
+      let garmentEl of products
+        | filter : term
+        | paginate
+          : { id: 'foo', itemsPerPage: 15, currentPage: page, totalItems: 40 }
+    "
+    [product]="garmentEl"
+    (onDetail)="getProductDetail(garmentEl._id)"
+  >
+  </app-product-list>
 </div>
-<div
-class="pagination"
->
-    <pagination-controls 
-    (pageChange)="page = $event" 
+<div class="pagination">
+  <pagination-controls
+    (pageChange)="page = $event"
     id="foo"
     previousLabel="Previous"
     nextLabel="Next"
-    >
-    </pagination-controls>
+  >
+  </pagination-controls>
 </div>

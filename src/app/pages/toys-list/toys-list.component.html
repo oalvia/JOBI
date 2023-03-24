@@ -1,9 +1,17 @@
 <div class="cards">
+  <div class="searchForm">
+    <input
+      type="text"
+      [(ngModel)]="term"
+      class="searchTerm"
+      placeholder="¿Qué estas buscando?"
+    />
+  </div>
   <app-product-list
-    *ngFor="let toyEl of products | paginate: { id: 'foo',
+    *ngFor="let toyEl of products| filter : term | paginate: { id: 'foo',
     itemsPerPage: 15,
     currentPage: page,
-    totalItems: 60 }"
+    totalItems: 60 } "
     [product]="toyEl"
     (onDetail)="getProductDetail(toyEl._id)"
     >

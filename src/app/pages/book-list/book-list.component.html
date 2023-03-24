@@ -1,7 +1,15 @@
     <div 
     class="cards" >
+    <div class="searchForm">
+    <input
+      type="text"
+      [(ngModel)]="term"
+      class="searchTerm"
+      placeholder="¿Qué estas buscando?"
+    />
+  </div>
         <app-product-list
-            *ngFor="let bookEl of products 
+            *ngFor="let bookEl of products| filter : term 
             | paginate: { id: 'foo',
             itemsPerPage: 15,
             currentPage: page,

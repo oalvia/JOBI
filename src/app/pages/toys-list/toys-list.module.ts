@@ -6,6 +6,8 @@ import { ToysListRoutingModule } from './toys-list-routing.module';
 import { ToysListComponent } from './toys-list.component';
 //import { ToyComponent } from './components/toy/toy.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ToysListRoutingModule,
     RouterModule,
     SharedModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    Ng2SearchPipeModule,
   ],
   exports: [
     ToysListComponent

@@ -6,11 +6,12 @@ import { BookListComponent } from './book-list.component';
 //import { BookComponent } from './components/book/book.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
-    BookListComponent
+    BookListComponent,
     //BookComponent
   ],
   imports: [
@@ -18,10 +19,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     BookListRoutingModule,
     RouterModule,
     SharedModule,
-    NgxPaginationModule
+    FormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
-  exports: [
-    BookListComponent
-  ]
+  exports: [BookListComponent],
 })
-export class BookListModule { }
+export class BookListModule {}
