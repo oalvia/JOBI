@@ -1,7 +1,10 @@
+import { ProductAdd } from './../../../core/services/cart/Order.model';
+import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from './../../../core/services/cart/cart.service';
 import { Router } from '@angular/router';
 import { Products } from './../../../core/services/cart/ApiProducts.model';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-detail',
@@ -10,8 +13,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartDetailComponent implements OnInit{
 
-  myCart$ = this.cartService.myCart$;
-  public products: Products[] = [];
+  public myCart$ = this.cartService.myCart$;
+  public products: Product[] = [];
   public total: number = 0;
 
   constructor(
@@ -58,5 +61,11 @@ export class CartDetailComponent implements OnInit{
   public totalNumProducts(){
     const totalProducts = this.cartService.totalNumProducts();
     return totalProducts;
+  }
+
+  public sendOrder(products: any) {
+    const order = this.cartService.sendOrder(products);
+    console.log(order);
+    return order;
   }
 }

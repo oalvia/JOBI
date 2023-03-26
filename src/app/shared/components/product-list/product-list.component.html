@@ -1,5 +1,4 @@
 <div
-(click)="navigateToDetail()"
 *ngIf="product"
 class="card">
     <img [src]="product.image" alt="image_book" class="card__img" 
@@ -7,6 +6,15 @@ class="card">
     <div>
         <p class="card__name">{{ product.name }}</p>
         <p class="card__price">{{ product.price }} €</p>
+        <div class="div_buttons">
+            <button 
+            class="addButton"
+            (click)="navigateToDetail()"
+            >+ info</button>
+            <button 
+            class="addButton"
+            (click)="addToCart(product)"
+            >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+        </div>
     </div>
-   
 </div>

@@ -69,7 +69,6 @@ const routes: Routes = [
     path: 'cart-detail',
     component: CartDetailComponent
   },
-  
   {
     path: '*',
     loadChildren: () => import('./pages/home/home.module').then(m=> m.HomeModule)

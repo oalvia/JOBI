@@ -1,5 +1,4 @@
-<div class="cards">
-  <div class="searchForm">
+  <div class="searchForm pagination">
     <input
       type="text"
       [(ngModel)]="term"
@@ -7,17 +6,31 @@
       placeholder="¿Qué estas buscando?"
     />
   </div>
-  <app-product-list
-    *ngFor="
-      let garmentEl of products
-        | filter : term
-        | paginate
-          : { id: 'foo', itemsPerPage: 15, currentPage: page, totalItems: 40 }
-    "
-    [product]="garmentEl"
-    (onDetail)="getProductDetail(garmentEl._id)"
-  >
-  </app-product-list>
+<div class="sort">
+    <ng-container *ngIf="price === 'desc' || !price ">
+      <button
+      class="addButton"
+      (click)="sort('asc')"
+      >Precio <span class="fa-solid fa-caret-up"></span></button>
+    </ng-container>
+    <ng-container *ngIf="price === 'asc'">
+      <button
+      class="addButton"
+      (click)="sort('desc')"
+      >Precio <span class="fa-solid fa-caret-down"></span></button>
+    </ng-container>
+  </div>
+<div class="cards" >
+    <app-product-list
+        *ngFor="let garmentEl of products | sort:price | filter : term | paginate: { id: 'foo',
+        itemsPerPage: 15,
+        currentPage: page,
+        totalItems: 40 }"
+        [product]="garmentEl"
+        (onDetail)="getProductDetail(garmentEl._id)"
+    >
+    </app-product-list>
+
 </div>
 <div class="pagination">
   <pagination-controls

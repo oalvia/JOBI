@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CartComponent } from './components/cart/cart.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
+import { SortComponent } from './components/sort/sort.component';
 
 
 
@@ -26,7 +27,8 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     ProductListComponent,
     ProductDetailComponent,
     CartComponent,
-    CartDetailComponent
+    CartDetailComponent,
+    SortComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,9 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     CartDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
-    TranslateModule
+    TranslateModule,
+    SortPipe,
+    SortComponent
   ]
 })
 export class SharedModule { }

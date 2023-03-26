@@ -1,32 +1,11 @@
-<div
-class="card-detail"
+<div class="card-detail"
 *ngIf="product">
-<div>
-    <img [src]="product.image" 
-    class="card-detail__img">
+    <app-product-detail
+    *ngIf="product"
+        [product]="product"
+        (onBack)="backToList()"
+        (onAdd)="addToCart(product)"
+        >
+        </app-product-detail>
 </div>
 
-
-<div *ngIf="product; else NotFound"
-    class="card-detail__content"
->
-    <p class="card-detail__content__name">{{ product.name }}</p>
-    <p class="card-detail__content__price">{{ product.price }}€</p>
-    <p class="card-detail__content__decades">Producido dorante los años: {{ product.decades }}</p><br>
-    <p class="card-detail__content__description">{{ product.description }}</p><br>
-    <p class="card-detail__content__brand">Producido por: {{ product.brand }}</p>
-    <p class="card-detail__content__age">Edad recomendada: {{ product.age }}</p>
-    <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>
-    <p class="card-detail__content__stock">Categoria: {{ product.subcategory }}</p>
-    <p class="card-detail__content__stock">Etiquetas: {{ product.tags }}</p>
-    <p class="card-detail__content__stock">Materiales usados: {{ product.materials }}</p>
-</div>
-<ng-template #NotFound>
-    <p>No hay un juguete con ese Id</p>
-</ng-template>
-
-</div>
-<!-- 
-subcategory?: string,
-    tags?: string[],
-    materials?: string[], -->

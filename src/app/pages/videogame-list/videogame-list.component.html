@@ -1,3 +1,21 @@
+<div class="sort">
+  <ng-container *ngIf="price === 'desc' || !price ">
+    <button
+    class="addButton"
+    (click)="sort('asc')"
+    >Precio <span class="fa-solid fa-caret-up"></span></button>
+  </ng-container>
+  <ng-container *ngIf="price === 'asc'">
+    <button
+    class="addButton"
+    (click)="sort('desc')"
+    >Precio <span class="fa-solid fa-caret-down"></span></button>
+  </ng-container>
+
+  <!-- <app-sort
+  [price]="price"
+  ></app-sort> -->
+</div>
 <div class="cards">
   <div class="searchForm">
     <input
@@ -8,12 +26,11 @@
     />
   </div>
   <app-product-list
-    *ngFor="
-      let videogameEl of products
-        | filter : term
-        | paginate
-          : { id: 'foo', itemsPerPage: 15, currentPage: page, totalItems: 60 }
-    "
+
+    *ngFor="let videogameEl of products | sort:price | filter : term | paginate: { id: 'foo',
+    itemsPerPage: 15,
+    currentPage: page,
+    totalItems: 60 }"
     [product]="videogameEl"
     (onDetail)="getProductDetail(videogameEl._id)"
   >

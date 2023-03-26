@@ -1,7 +1,6 @@
-import { ActivatedRoute } from '@angular/router';
+import { CartService } from './../../core/services/cart/cart.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { ToysService } from './../../core/services/toys/toys.service';
-import { ToysInterface } from './../../core/services/toys/models/toys.models';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -13,13 +12,14 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 })
 export class ToysDetailComponent {
   
-  //public toy?: ToysInterface;
   public product?: Product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private toysService: ToysService,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private cartService: CartService,
+    private router: Router
+
   ) {
     this.activatedRoute.params.subscribe((params) => {
       const toyId = params['id'];
@@ -27,5 +27,13 @@ export class ToysDetailComponent {
         this.product = toy;
       });
     });
+  }
+
+  public backToList(){
+    this.router.navigate(['toys-list'])
+  }
+
+  public addToCart(product: Product){
+    return this.cartService.addProduct(product);
   }
 }

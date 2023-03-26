@@ -8,20 +8,25 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
-    if (userPrefersDark) {
-      this.setThema('dark')
-    }
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    
+
     if (userPrefersLight) {
       this.setThema('light')
     }
+    // if (userPrefersDark) {
+    //   this.setThema('dark')
+    // }
+
   }
   title = 'JOBI';
-  setThema(t: string) {
+  setThema(themeChoise: string) {
    
-    document.documentElement.className = t;
+    document.documentElement.className = themeChoise;
+    
   }
 }

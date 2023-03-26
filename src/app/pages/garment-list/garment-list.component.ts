@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GarmentsService } from 'src/app/core/services/garments/garments.service';
-import { Garment } from 'src/app/core/services/garments/models/garment.models';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -12,25 +10,24 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 })
 export class GarmentListComponent implements OnInit {
   page: number = 1;
-  // public garment?: Garment;
-  // public garments: Garment[] = [];
   public product?: Product;
   public products: Product[] = [];
   public term = '';
+  public price: string = '';
 
   constructor(
     private router: Router,
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
-  ) //private garmentsService: GarmentsService
+  ) 
   {}
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
-      this.productsService.getGarmentsCategory().subscribe((garment) => {
+    this.activatedRoute.params.subscribe(() => {
+      const garmentCategory = 'ropa';
+      this.productsService.getProductsCategory(garmentCategory).subscribe((garment) => {
         this.products = garment;
-      });
+      })
     });
   }
 
@@ -38,5 +35,10 @@ export class GarmentListComponent implements OnInit {
     this.productsService.getProductsDetail(id).subscribe((garmentDetail) => {
       this.router.navigate(['garmentDetail', garmentDetail._id]);
     });
+  }
+  
+  public sort(value: string){
+    this.price = value;
+    console.log(this.price);
   }
 }
