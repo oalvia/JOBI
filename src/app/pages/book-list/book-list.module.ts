@@ -5,22 +5,21 @@ import { BookListRoutingModule } from './book-list-routing.module';
 import { BookListComponent } from './book-list.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
-    BookListComponent,
+    BookListComponent
   ],
   imports: [
     CommonModule,
     BookListRoutingModule,
     RouterModule,
     SharedModule,
-    FormsModule,
-    NgxPaginationModule,
-    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
-  exports: [BookListComponent],
+  exports: [
+    BookListComponent
+  ]
 })
-export class BookListModule {}
+export class BookListModule { }
