@@ -79,5 +79,9 @@ export class UserServiceService {
     const checkUser = localStorage.getItem(TOKEN_KEY);
     return checkUser ? JSON.parse(checkUser).name : null;
   }
+  public getUserId(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).id : null;
+  }
 
 }

@@ -26,6 +26,10 @@ export class CartService {
     private router: Router
   ) { }
 
+  public getMyList(){
+    return this.myCart;
+  }
+
   public getApiProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(API_PRODUCTS_URL);
   }
