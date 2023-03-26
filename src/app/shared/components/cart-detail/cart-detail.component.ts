@@ -20,17 +20,12 @@ export class CartDetailComponent implements OnInit{
   constructor(
     private router: Router,
     private cartService: CartService,
-  ){
-    console.log(this.myCart$);
-  }
+  ){}
 
   public ngOnInit(): void {
 
     this.cartService.getApiProducts().subscribe((productsApi) => {
       this.products = productsApi;
-
-      
-      
     })
 
   }
@@ -73,6 +68,4 @@ export class CartDetailComponent implements OnInit{
     console.log(order);
     return order;
   }
-
-  // orderRouter.post('/', async (req, res, next) => {    try {      const newOrder = new Order({        items: req.body.items.map(item => Object.assign({}, item)),        total: req.body.total      });      const createOrder = await newOrder.save();      return res.status(201).json(createOrder);    } catch (err) {      next(err);    }  });
 }

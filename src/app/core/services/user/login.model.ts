@@ -12,8 +12,6 @@ export interface LoginJWT {
 export interface User {
     _id:       string;
     email:     string;
-    name?: string;
-    image?: string;
     password?:  string | null;
     createdAt?: Date;
     updatedAt?: Date;
