@@ -1,5 +1,5 @@
 <div class="header">
-
+  
 <div
 *ngIf="logged"
 class="logout"
@@ -25,10 +25,10 @@ class="logout"
   <nav class="header__nav">
     <ul class="header__nav_ul">
       <li class="header__nav_li">
-        <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a>
-        <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
-        <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
-        <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a>
+        <a class="header__nav_a" [routerLink]="['book-list']"> {{"books" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['garment-list']"> {{"garment" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['videogames']"> {{"videoGames" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['toys-list']"> {{"toys" | translate}} </a>
         <a [routerLink]="['login']">
              <i class="fa-solid fa-user"></i>
          </a>
@@ -47,10 +47,15 @@ class="logout"
           </div>
             <i class="fa-solid fa-cart-shopping"></i>
          </div>
+         <a [routerLink]="['products']">
+            <i class="fa-solid fa-magnifying-glass"></i>
+         </a>
+      </li>
+      <li>
+        <app-translation></app-translation>
       </li>
 
     </ul>
-     <a class="header__nav_a" [routerLink]="['main']">Productos</a>
   </nav>
   <div
   class="list__cart"
@@ -59,3 +64,5 @@ class="logout"
   <app-cart></app-cart>
   </div>
 </div>
+
+

@@ -17,21 +17,25 @@ export class ToysListComponent implements OnInit {
   public product?: Product;
   public products: Product[] = [];
   public term = '';
+  public message: string = ''
+  public currentMessage: string = '';
 
   constructor(
     private router: Router,
     //private ToysService: ToysService
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
+    
   ) {}
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
       this.productsService.getToysCategory().subscribe((toy) => {
         this.products = toy;
       });
     });
+
+    this.currentMessage = this.message;
   }
 
   public getProductDetail(id: string) {

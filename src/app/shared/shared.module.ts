@@ -12,8 +12,6 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
-import { ProductsComponent } from './components/products/products.component';
-import { MainComponent } from './components/main/main.component';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 
 
@@ -28,8 +26,6 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     ProductListComponent,
     ProductDetailComponent,
     CartComponent,
-    ProductsComponent,
-    MainComponent,
     CartDetailComponent
   ],
   imports: [
@@ -42,8 +38,6 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     CartDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
-    MainComponent,
-    ProductsComponent,
     TranslateModule
   ]
 })

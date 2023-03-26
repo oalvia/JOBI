@@ -8,6 +8,8 @@ import { ToysListComponent } from './toys-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TranslationComponent } from 'src/app/core/services/translation/translation.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 @NgModule({
@@ -23,6 +25,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NgxPaginationModule,
     FormsModule,
     Ng2SearchPipeModule,
+   CoreModule
+    
+
   ],
   exports: [
     ToysListComponent
