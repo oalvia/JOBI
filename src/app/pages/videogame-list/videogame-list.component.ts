@@ -7,17 +7,17 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 @Component({
   selector: 'app-videogame-list',
   templateUrl: './videogame-list.component.html',
-  styleUrls: ['./videogame-list.component.scss']
+  styleUrls: ['./videogame-list.component.scss'],
 })
 export class VideogameListComponent implements OnInit {
-
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
+  public term = '';
   public price: string = '';
   
 
-  
+
   constructor(
     private router: Router,
     private productsService: ProductsService,
@@ -50,4 +50,5 @@ export class VideogameListComponent implements OnInit {
     }
     
   }
+
 

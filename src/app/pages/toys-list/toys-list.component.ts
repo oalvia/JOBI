@@ -6,13 +6,15 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 @Component({
   selector: 'app-toys-list',
   templateUrl: './toys-list.component.html',
-  styleUrls: ['./toys-list.component.scss']
+  styleUrls: ['./toys-list.component.scss'],
 })
-export class ToysListComponent implements OnInit{
-
+export class ToysListComponent implements OnInit {
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
+  public term = '';
+  public message: string = ''
+  public currentMessage: string = '';
   public price: string = '';
 
 constructor(
@@ -28,12 +30,13 @@ public ngOnInit(): void {
       this.products = toy;
     })
   });
+
   }
 
   public getProductDetail(id: string) {
     this.productsService.getProductsDetail(id).subscribe((toysDetail) => {
-      this.router.navigate(['toysDetail', toysDetail._id])
-    })
+      this.router.navigate(['toysDetail', toysDetail._id]);
+    });
   }
 
   public sort(value: string){

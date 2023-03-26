@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -28,5 +29,4 @@ export class AppComponent implements OnInit {
     document.documentElement.className = themeChoise;
     
   }
- 
 }

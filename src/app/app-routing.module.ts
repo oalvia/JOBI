@@ -1,7 +1,9 @@
+import { Products } from './core/services/cart/ApiProducts.model';
 import { CartDetailComponent } from './shared/components/cart-detail/cart-detail.component';
 import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductsModule } from './pages/products/products.module';
 
 
 const routes: Routes = [
@@ -54,6 +56,11 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/user/register/register.module').then(m => m.RegisterModule)
   },
+  {
+    path: 'products',
+    loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule)
+  },
+
   {
     path: 'cart',
     component: CartComponent
