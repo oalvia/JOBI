@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     private userService: UserServiceService,
     private cartService: CartService
   ){
-    this.user = this.userService.getUser();
+    this.user = this.userService.getUserName();
     console.log(this.user);
   }
 

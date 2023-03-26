@@ -16,11 +16,14 @@ export class CartDetailComponent implements OnInit{
   public myCart$ = this.cartService.myCart$;
   public products: Product[] = [];
   public total: number = 0;
+  public unProducto?: Product;
 
   constructor(
     private router: Router,
     private cartService: CartService,
-  ){}
+  ){
+    
+  }
 
   public ngOnInit(): void {
 
@@ -63,9 +66,8 @@ export class CartDetailComponent implements OnInit{
     return totalProducts;
   }
 
-  public sendOrder(products: any) {
+  public async sendOrder(products: any) {
     const order = this.cartService.sendOrder(products);
-    console.log(order);
     return order;
   }
 }
