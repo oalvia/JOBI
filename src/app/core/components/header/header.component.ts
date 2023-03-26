@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   public logged: boolean = false;
   public logOut: boolean = false;
   public viewCart: boolean = false;
-  public userName: string | null;
+  public user: string | null;
 
   
   
@@ -22,7 +22,8 @@ export class HeaderComponent implements OnInit {
     private userService: UserServiceService,
     private cartService: CartService
   ){
-    this.userName = this.userService.getUserName();
+    this.user = this.userService.getUser();
+    console.log(this.user);
   }
 
   public ngOnInit(): void {

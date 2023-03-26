@@ -43,9 +43,7 @@ export class UserServiceService {
         const userStore = JSON.stringify({
           token: res.token,
           id: res.user._id,
-          email: res.user.email,
-          name: res.user.name,
-          image: res.user.image
+          email: res.user.email
         });
         localStorage.setItem(TOKEN_KEY, userStore);
         this.userLogged$.next(true);
@@ -75,9 +73,9 @@ export class UserServiceService {
     return checkToken ? JSON.parse(checkToken).token : null;
   }
 
-  public getUserName(): string | null {
+  public getUser(): string | null {
     const checkUser = localStorage.getItem(TOKEN_KEY);
-    return checkUser ? JSON.parse(checkUser).name : null;
+    return checkUser ? JSON.parse(checkUser).email : null;
   }
 
 }
