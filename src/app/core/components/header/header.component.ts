@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
     private cartService: CartService
   ){
     this.user = this.userService.getUserName();
-    console.log(this.user);
   }
 
   public ngOnInit(): void {
