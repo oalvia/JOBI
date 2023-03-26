@@ -1,36 +1,27 @@
 import { Component, OnDestroy, OnInit, Input } from '@angular/core';
-import {
-  interval,
-  Observable,
-  startWith,
-  Subject,
-  switchMap,
-  timer,
-} from 'rxjs';
+import { interval, Observable, startWith, Subject, switchMap, timer } from 'rxjs';
 import { SlideInterface } from './models/slide.models';
 
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.scss'],
+  styleUrls: ['./image-slider.component.scss']
 })
-export class ImageSliderComponent implements OnInit, OnDestroy {
-  // @Input() slides: SlideInterface[] = [];
+export class ImageSliderComponent implements OnInit, OnDestroy{
 
+  // @Input() slides: SlideInterface[] = [];
+ 
   public slides: SlideInterface[];
 
-  constructor() {
+  constructor(){
     this.slides = [
-      { url: '/assets/public/img/banner.webp', title: 'image1' },
+      { url: '/assets/public/img/bestSeller_book.jpg', title: 'image1' },
       { url: '/assets/public/img/bestSeller_garment.jpg', title: 'image2' },
       { url: '/assets/public/img/bestSeller_videogames.jpg', title: 'image3' },
-      { url: '/assets/public/img/bestSeller_videogames_2.jpg', title: 'image4'},
-      { url: '/assets/public/img/woodhorse.jpg', title: 'image5' },
-      { url: '/assets/public/img/sunbeam.jpg', title: 'image6' },
-      { url: '/assets/public/img/canicas.jpg', title: 'image7' },
-      { url: '/assets/public/img/legoduplo.jpg', title: 'image8' },
-    ];
+      { url: '/assets/public/img/bestSeller_videogames_2.jpg', title: 'image4' },
+    ]
   }
+   
 
   currentIndex: number = 0;
   timeoutId?: number;
@@ -45,7 +36,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     if (this.timeoutId) {
       window.clearTimeout(this.timeoutId);
     }
-    this.timeoutId = window.setTimeout(() => this.goToNext(), 3500);
+    this.timeoutId = window.setTimeout(() => this.goToNext(), 6000);
   }
 
   goToPrevious(): void {
@@ -73,4 +64,5 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
   }
+
 }

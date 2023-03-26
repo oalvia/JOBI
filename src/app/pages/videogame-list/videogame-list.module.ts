@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { VideogameListRoutingModule } from './videogame-list-routing.module';
 import { VideogameListComponent } from './videogame-list.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -19,8 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     RouterModule,
     SharedModule,
     FormsModule,
-    NgxPaginationModule,
-    Ng2SearchPipeModule
+    NgxPaginationModule
   ]
 })
 export class VideogameListModule { }

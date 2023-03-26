@@ -1,11 +1,3 @@
-  <div class="searchForm pagination">
-    <input
-      type="text"
-      [(ngModel)]="term"
-      class="searchTerm"
-      placeholder="¿Qué estas buscando?"
-    />
-  </div>
 <div class="sort">
     <ng-container *ngIf="price === 'desc' || !price ">
       <button
@@ -22,7 +14,7 @@
   </div>
 <div class="cards" >
     <app-product-list
-        *ngFor="let garmentEl of products | sort:price | filter : term | paginate: { id: 'foo',
+        *ngFor="let garmentEl of products | sort:price | paginate: { id: 'foo',
         itemsPerPage: 15,
         currentPage: page,
         totalItems: 40 }"
@@ -30,14 +22,15 @@
         (onDetail)="getProductDetail(garmentEl._id)"
     >
     </app-product-list>
-
 </div>
-<div class="pagination">
-  <pagination-controls
-    (pageChange)="page = $event"
+<div
+class="pagination"
+>
+    <pagination-controls 
+    (pageChange)="page = $event" 
     id="foo"
     previousLabel="Previous"
     nextLabel="Next"
-  >
-  </pagination-controls>
+    >
+    </pagination-controls>
 </div>
