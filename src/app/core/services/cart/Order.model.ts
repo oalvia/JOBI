@@ -1,9 +1,6 @@
-export interface Order {
-    products: ProductAdd,
-    user: string
-}
+import { Product } from './../products/models/product.models';
 
-export interface ProductAdd {
-    _id: string[];
-    stock: number[];
+export interface Order {
+    products: Product[],
+    user?: string
 }
