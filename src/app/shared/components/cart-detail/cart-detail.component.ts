@@ -18,7 +18,8 @@ export class CartDetailComponent implements OnInit{
   public total: number = 0;
   public oneOrder: Product[] = [];
   public userId: string | null;
-  public myLyst:any;
+  public myLyst: any;
+  public totalPrice: string = '';
 
   constructor(
     private router: Router,
@@ -36,11 +37,9 @@ export class CartDetailComponent implements OnInit{
 
     this.cartService.getMyList().subscribe((list) => {
       this.myLyst = list;
-      console.log(this.myLyst);
-      
     })
 
-    this.userService.getUserId()
+    this.totalPrice = this.cartService.totalCart();
 
   }
 
@@ -79,10 +78,12 @@ export class CartDetailComponent implements OnInit{
 
   public sendOrder() {
     const userId = this.userId;
-    const compra = this.myLyst;
+    const products = this.myLyst;
+    const total = this.totalPrice;
     const newOrder = {
+      "products": products,
       "user": userId,
-      "products": compra
+      "total": total
   };
     return this.cartService.sendOrder(newOrder).subscribe();
   }
