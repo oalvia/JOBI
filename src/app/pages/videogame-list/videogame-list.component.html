@@ -1,20 +1,17 @@
 <div class="sort">
-  <ng-container *ngIf="price === 'desc' || !price ">
+  <ng-container ngIf="price === 'desc' || !price ">
     <button
     class="addButton"
     (click)="sort('asc')"
     >Precio <span class="fa-solid fa-caret-up"></span></button>
   </ng-container>
-  <ng-container *ngIf="price === 'asc'">
+  <ng-containerngIf="price === 'asc'">
     <button
     class="addButton"
     (click)="sort('desc')"
     >Precio <span class="fa-solid fa-caret-down"></span></button>
   </ng-container>
 
-  <!-- <app-sort
-  [price]="price"
-  ></app-sort> -->
 </div>
 <div class="cards">
   <app-product-list
