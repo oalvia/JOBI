@@ -6,9 +6,8 @@ import { CategoryComponent } from './component-category/category.component';
 import { SaleComponent } from './component-sale/sale.component';
 import { NovedadesComponent } from './component-novedades/novedades.component';
 import { BestSellerComponent } from './component-best-seller/best-seller.component';
-import { ImageSliderComponent } from 'src/app/shared/components/image-slider/image-slider.component';
 import { SpanComponent } from './component-span/span.component';
-
+import { ImageSliderComponent } from './image-slider/image-slider.component';
 
 
 
@@ -29,5 +28,6 @@ import { SpanComponent } from './component-span/span.component';
     CommonModule,
     HomeRoutingModule,
   ]
+  
 })
 export class HomeModule { }

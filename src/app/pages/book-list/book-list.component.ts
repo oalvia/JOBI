@@ -20,8 +20,7 @@ export class BookListComponent implements OnInit{
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
   ) {
-    
-  }
+    }
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe(() => {
@@ -41,5 +40,4 @@ public sort(value: string){
   this.price = value;
   console.log(this.price);
 }
-
 }

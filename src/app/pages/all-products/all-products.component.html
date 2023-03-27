@@ -1,0 +1,33 @@
+<div class="pagination">
+    <input
+      type="text"
+      class="searchForm"
+      name="searchTerm"
+      placeholder="¿Qué estas buscando?"
+      [(ngModel)]="term"
+    />  
+    </div>
+  
+  <div class="cards">
+    <app-product-list
+        *ngFor="let productEl of products
+        | search: term
+        | paginate: { id: 'foo',
+        itemsPerPage: 15,
+        currentPage: page,
+        totalItems: 210 }"
+        [product]="productEl"
+        (onDetail)="getProductDetail(productEl._id)"
+      >
+    </app-product-list>
+      
+    </div>
+    <div class="pagination">
+      <pagination-controls
+    (pageChange)="page = $event" 
+    id="foo"
+    previousLabel="Previous"
+    nextLabel="Next"
+    >
+    </pagination-controls>
+    </div>

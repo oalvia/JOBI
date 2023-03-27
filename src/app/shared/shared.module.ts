@@ -37,6 +37,7 @@ import { SortComponent } from './components/sort/sort.component';
     CartDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
+    SearchPipe,
     SortPipe,
     SortComponent
   ]

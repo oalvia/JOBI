@@ -29,9 +29,13 @@
         </ng-container>
 
         <ng-container *ngIf="product.category === 'juguetes'">
-            <p class="card-detail__content__brand">{{ product.brand }}</p>
-            <p class="card-detail__content__decades">{{ product.decades }}</p>
-            <p class="card-detail__content__age">{{ product.age }}</p>
+            <p class="card-detail__content__brand">Producido por {{ product.brand }}</p>
+            <p class="card-detail__content__decades">Producido durante el período {{ product.decades }}</p>
+            <p class="card-detail__content__age">Apto para {{ product.age }} años de edad.</p>
+            <p class="card-detail__content__hidden">Subcategoria:{{ product.subcategory }} </p>
+            <p class="card-detail__content__hidden">Etiquetas:{{ product.tags }} </p>
+            <p class="card-detail__content__stock">Stock:{{ product.stock }} </p>
+            <p class="card-detail__content__hidden">Materiales:{{ product.materials }} </p>
         </ng-container>
 
         <ng-container *ngIf="product.category === 'videojuegos'">
