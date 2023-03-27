@@ -1,59 +1,60 @@
 <div class="wrap">
-    <div class="wrapheader_logo" >
-      <a  [routerLink]="['home']">
-        <img class="logo" src="../../../../assets/public/img/logo-jovi.svg" />
-      </a>
-    </div>
-    <div class="wrapheader_icons" >
-        <ng-container *ngIf="!logged">
-      <li class="wrapheader_icon">
-      <a [routerLink]="['login']">
-           <span class="fa-solid fa-user"></span>
-       </a>
-       <a [routerLink]="['register']">
-              <span class="fa-solid fa-users"></span>
-       </a>
-    </ng-container>
-    <div
-    *ngIf="logged"
-    class="logout"
-    >
-        <button
-        (click)="cerrarSesion()"
-        class="addButton"
-        ><span class="fa-solid fa-power-off"></span> {{ user }}</button>
-    </div>
-       <div
-       (click)="onToggleCart()"
-       class="cart"
-       >
-        <div
-        class="cartitems">
-          <p
-          class="cartitems-num"
-          >{{ totalNumProducts() }}</p>
-        </div>
-          <span class="fa-solid fa-cart-shopping"></span>
-       </div>
-        </li>
-            </li>
-    </div>
+  <div class="wrap__header_logo" >
+    <a  [routerLink]="['home']">
+      <img class="logo" src="../../../../assets/public/img/logo-jovi.svg" />
+    </a>
   </div>
+  <div class="wrap__header_icons" >
+    <li class="wrap__header_icon">
+    <a [routerLink]="['login']">
+         <span class="fa-solid fa-user"></span>
+     </a>
+     <a [routerLink]="['register']">
+            <span class="fa-solid fa-users"></span>
+     </a>
+     <div
+     (click)="onToggleCart()"
+     class="cart"
+     >
+      <div
+      class="cart__items">
+        <p
+        class="cart__items-num"
+        >{{ totalNumProducts() }}</p>
+      </div>
+        <span class="fa-solid fa-cart-shopping"></span>
+     </div>
+          </li>
+  </div>
+</div>
 
 
 
 <div class="header">
 
+<div
+*ngIf="logged"
+class="logout"
+>
+    <img
+    (click)="addButton()"
+    class="logged" 
+    src="https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png" 
+    alt="user logged">
+    <button
+    (click)="cerrarSesion()"
+    *ngIf="logOut"
+    class="button"
+    >LOGOUT</button>
+</div>
 
    <div class="toggle-menu"  id="toggle-menu">
     <i class="fa-solid fa-bars"></i>
    </div>
 
-
   <nav class="header__nav">
     <ul class="header__nav_ul" id="header__nav_ul">
       <li class="header__nav_li">
-
         <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a></li>
         <li class="header__nav_li">
         <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a></li>
@@ -61,7 +62,6 @@
         <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a></li>
         <li class="header__nav_li">
         <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a></li>
-
     </ul>
   </nav>
   <div
