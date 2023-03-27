@@ -28,8 +28,6 @@ export class HeaderComponent implements OnInit {
   public ngOnInit(): void {
     this.userService.isLogged();
     this.userService.userLogged$.subscribe((isLogged) => this.logged = isLogged);
-    
-    
   }
 
   public navigateToList() {
