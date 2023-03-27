@@ -1,8 +1,10 @@
+import { UserServiceService } from './../../../core/services/user/user-service.service';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from './../../../core/services/cart/cart.service';
 import { Router } from '@angular/router';
 import { Products } from './../../../core/services/cart/ApiProducts.model';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart-detail',
@@ -11,20 +13,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartDetailComponent implements OnInit{
 
-  myCart$ = this.cartService.myCart$;
+  public myCart$ = this.cartService.myCart$;
   public products: Product[] = [];
   public total: number = 0;
+  public oneOrder: Product[] = [];
+  public userId: string | null;
+  public myLyst:any;
 
   constructor(
     private router: Router,
     private cartService: CartService,
-  ){}
+    private userService: UserServiceService
+  ){
+    this.userId = this.userService.getUserId();
+  }
 
   public ngOnInit(): void {
 
     this.cartService.getApiProducts().subscribe((productsApi) => {
       this.products = productsApi;
     })
+
+    this.cartService.getMyList().subscribe((list) => {
+      this.myLyst = list;
+      console.log(this.myLyst);
+      
+    })
+
+    this.userService.getUserId()
 
   }
 
@@ -59,5 +75,15 @@ export class CartDetailComponent implements OnInit{
   public totalNumProducts(){
     const totalProducts = this.cartService.totalNumProducts();
     return totalProducts;
+  }
+
+  public sendOrder() {
+    const userId = this.userId;
+    const compra = this.myLyst;
+    const newOrder = {
+      "user": userId,
+      "products": compra
+  };
+    return this.cartService.sendOrder(newOrder).subscribe();
   }
 }

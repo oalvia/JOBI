@@ -13,6 +13,8 @@ export interface User {
     _id:       string;
     email:     string;
     password?:  string | null;
+    name?: string;
+    image?: string;
     createdAt?: Date;
     updatedAt?: Date;
     __v?:       number;

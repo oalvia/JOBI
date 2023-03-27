@@ -14,6 +14,8 @@ const API_URL_LOGIN_JWT = 'https://project-jobi-api.vercel.app/user/login-jwt';
 
 const TOKEN_KEY = 'user-token';
 
+const EMAIL_KEY = 'user-email';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +43,9 @@ export class UserServiceService {
         const userStore = JSON.stringify({
           token: res.token,
           id: res.user._id,
-          email: res.user.email
+          email: res.user.email,
+          name: res.user.name,
+          image: res.user.image
         });
         localStorage.setItem(TOKEN_KEY, userStore);
         this.userLogged$.next(true);
@@ -69,6 +73,15 @@ export class UserServiceService {
   public getToken(): string | null {
     const checkToken = localStorage.getItem(TOKEN_KEY);
     return checkToken ? JSON.parse(checkToken).token : null;
+  }
+
+  public getUserName(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).name : null;
+  }
+  public getUserId(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).id : null;
   }
 
 }

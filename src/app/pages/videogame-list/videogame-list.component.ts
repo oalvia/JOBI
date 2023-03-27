@@ -14,6 +14,8 @@ export class VideogameListComponent implements OnInit {
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
+  public price: string = '';
+  
 
   
   constructor(
@@ -24,11 +26,12 @@ export class VideogameListComponent implements OnInit {
   ){}
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      this.productsService.getVideogamesCategory().subscribe((videogame) =>{
+    this.activatedRoute.params.subscribe(() => {
+      const videdogameCategory = 'videojuegos';
+      this.productsService.getProductsCategory(videdogameCategory).subscribe((videogame) => {
         this.products = videogame;
       })
-    })
+    });
    }
 
     public getProductDetail(id: string) {
@@ -39,6 +42,11 @@ export class VideogameListComponent implements OnInit {
 
     public addToCart(addProduct: Product){
       return this.cartService.addProduct(addProduct);
+    }
+
+    public sort(value: string){
+      this.price = value;
+      console.log(this.price);
     }
     
   }

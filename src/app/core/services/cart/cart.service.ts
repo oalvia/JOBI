@@ -1,27 +1,34 @@
+import { Order } from './../order/order.model';
+import { Login } from './../user/login.model';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { Products } from './ApiProducts.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { transformProduct } from '../products/products.helpers';
 
 const API_PRODUCTS_URL = 'https://project-jobi-api.vercel.app/products';
-
+const API_ORDER_URL = "https://movies-five-eosin.vercel.app/cart";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  //private myList: Products[] = [];
   private myList: Product[] = [];
 
   private myCart = new BehaviorSubject<Product[]>([]);
   myCart$ = this.myCart.asObservable();
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
+
+  public getMyList(){
+    return this.myCart;
+  }
 
   public getApiProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(API_PRODUCTS_URL);
@@ -76,4 +83,10 @@ export class CartService {
     const totalProducts = this.myList.length;
     return totalProducts;
   }
+
+  public sendOrder(order: any): Observable<any>{
+    console.log(order);
+    return this.http.post<any>(`${API_ORDER_URL}`, order);
+  }
+
 }

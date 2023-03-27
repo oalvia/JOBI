@@ -13,6 +13,7 @@ export class GarmentListComponent implements OnInit {
   page: number = 1;
   public product?: Product ;
   public products: Product[] = [];
+  public price: string = '';
   
   constructor(
     private router :Router,
@@ -21,18 +22,22 @@ export class GarmentListComponent implements OnInit {
   ){}
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
-      this.productsService.getGarmentsCategory().subscribe((garment) =>{
-        this.products = garment
+    this.activatedRoute.params.subscribe(() => {
+      const garmentCategory = 'ropa';
+      this.productsService.getProductsCategory(garmentCategory).subscribe((garment) => {
+        this.products = garment;
       })
-    })
-    
+    });
   }
 
   public getProductDetail(id: string) {
     this.productsService.getProductsDetail(id).subscribe((garmentDetail) => {
       this.router.navigate(['garmentDetail', garmentDetail._id])
     })
+  }
+  
+  public sort(value: string){
+    this.price = value;
+    console.log(this.price);
   }
 }

@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit{
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
+  public price: string = '';
 
   constructor(
     private router: Router,
@@ -23,9 +24,9 @@ export class BookListComponent implements OnInit{
   }
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
-      this.productsService.getProductsCategory().subscribe((book) => {
+    this.activatedRoute.params.subscribe(() => {
+      const bookCategory = 'libros';
+      this.productsService.getProductsCategory(bookCategory).subscribe((book) => {
         this.products = book;
       })
     });
@@ -35,6 +36,10 @@ public getProductDetail(id: string) {
   this.productsService.getProductsDetail(id).subscribe((bookDetail) => {
     this.router.navigate(['detail', bookDetail._id])
   })
+}
+public sort(value: string){
+  this.price = value;
+  console.log(this.price);
 }
 
 }
