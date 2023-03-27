@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,6 @@ import { SortComponent } from './components/sort/sort.component';
 
 
 
-
 @NgModule({
   declarations: [
     PaginationPipe,
@@ -25,12 +25,12 @@ import { SortComponent } from './components/sort/sort.component';
     ProductDetailComponent,
     CartComponent,
     CartDetailComponent,
-    SortComponent
+    SortComponent,
   ],
   imports: [
     CommonModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     CartComponent,

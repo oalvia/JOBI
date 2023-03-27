@@ -8,10 +8,10 @@
   <nav class="header__nav">
     <ul class="header__nav_ul">
       <li class="header__nav_li">
-        <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a>
-        <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
-        <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
-        <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a>
+        <a class="header__nav_a" [routerLink]="['book-list']"> {{"books" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['garment-list']"> {{"garment" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['videogames']"> {{"videoGames" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['toys-list']"> {{"toys" | translate}} </a>
         
          <ng-container *ngIf="!logged">
           <a [routerLink]="['login']">
@@ -47,7 +47,17 @@ class="logout"
           <i class="fa-solid fa-magnifying-glass"></i>
        </a>
       </li>
-
+      <li>
+        <select
+        #selectedLang
+        (change)="switchLang(selectedLang.value)">
+      <option *ngFor="let language of translate.getLangs()"
+      [value]="language"
+      [selected]="language === translate.currentLang">
+      {{ language}}
+      </option>
+      </select>
+    </li>
     </ul>
   </nav>
   <div
