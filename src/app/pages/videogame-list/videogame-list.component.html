@@ -17,11 +17,11 @@
   <app-product-list
     *ngFor="let videogameEl of products | sort:price | paginate: { id: 'foo',
     itemsPerPage: 15,
-    currentPage: page,
-    totalItems: 60 }"
+    currentPage: page }"
     [product]="videogameEl"
     (onDetail)="getProductDetail(videogameEl._id)">
   </app-product-list>
+</div>
 <div
 class="pagination"
 >

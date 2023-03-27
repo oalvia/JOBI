@@ -16,8 +16,7 @@
   <app-product-list
     *ngFor="let toyEl of products | sort:price | paginate: { id: 'foo',
     itemsPerPage: 15,
-    currentPage: page,
-    totalItems: 60 }"
+    currentPage: page}"
     [product]="toyEl"
     (onDetail)="getProductDetail(toyEl._id)"
     >
