@@ -18,8 +18,7 @@
             *ngFor="let bookEl of products | sort:price 
             | paginate: { id: 'foo',
             itemsPerPage: 15,
-            currentPage: page,
-            totalItems: 50 }"
+            currentPage: page }"
             [product]="bookEl"
             (onDetail)="getProductDetail(bookEl._id)"
         >

@@ -71,11 +71,9 @@
   display: none;
   
 }
-span{
+.fa-user, .fa-users, .fa-cart-shopping{
   font-size: 40px;
-  //padding-top: 20px;
 }
-
 @media screen and (min-width: 320px) and (max-width: 578px){
   .wrap{
     align-items: center;
@@ -118,10 +116,9 @@ span{
   
 }
 
-span{
-  font-size: 35px;
-  //padding-top: 20px;
-}
+// .fa-user, .fa-users, .fa-cart-shopping{
+//   font-size: 35px;
+// }
 
 .fa-solid, .fa-bars{
   font-size: 30px;
