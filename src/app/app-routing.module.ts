@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
   },
   {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule)
+  },
+  {
     path: 'videogames',
     loadChildren: () => import('./pages/videogame-list/videogame-list.module').then(m => m.VideogameListModule)
   },
