@@ -16,7 +16,7 @@ export interface User {
     name?: string;
     surname?: string;
     phone?: number;
-    image?: string;
+    avatar?: string;
     createdAt?: Date;
     updatedAt?: Date;
     __v?:       number;

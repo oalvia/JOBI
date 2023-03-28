@@ -45,7 +45,9 @@ export class UserServiceService {
           id: res.user._id,
           email: res.user.email,
           name: res.user.name,
-          image: res.user.image
+          phone: res.user.phone,
+          surname: res.user.surname,
+          avatar: res.user.avatar
         });
         localStorage.setItem(TOKEN_KEY, userStore);
         this.userLogged$.next(true);
@@ -96,7 +98,7 @@ export class UserServiceService {
 
   public getUserImage(): string | null {
     const checkUser = localStorage.getItem(TOKEN_KEY);
-    return checkUser ? JSON.parse(checkUser).image : null;
+    return checkUser ? JSON.parse(checkUser).avatar : null;
   }
 
   public getUserPhone(): string | null {
