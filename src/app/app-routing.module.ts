@@ -23,6 +23,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
   },
   {
+    path: 'home/book-discounted-list',
+    loadChildren: () => import('./pages/book-discounted-list/book-discounted-list.module').then(m=> m.BookDiscountedListModule)
+  },
+  {
+    path: 'bookDiscountedDetail/:id',
+    loadChildren: () => import('./pages/book-discounted-detail/book-discounted-detail.module').then(m=> m.BookDiscountedDetailModule)
+  },
+  {
     path: 'videogames',
     loadChildren: () => import('./pages/videogame-list/videogame-list.module').then(m => m.VideogameListModule)
   },
@@ -31,12 +39,28 @@ const routes: Routes = [
     loadChildren: () => import('./pages/videogame-detail/videogame-detail.module').then(m => m.VideogameDetailModule)
    },
    {
+    path: 'home/videogames-discounted-list',
+    loadChildren: () => import('./pages/videogame-discounted-list/videogame-discounted-list.module').then(m=> m.VideogameDiscountedListModule)
+  },
+  {
+    path: 'videogamesDiscountedDetail/:id',
+    loadChildren: () => import('./pages/videogame-discounted-detail/videogame-discounted-detail.module').then(m=> m.VideogameDiscountedDetailModule)
+  }, 
+   {
     path: 'garment-list',
     loadChildren: () => import('./pages/garment-list/garment-list.module').then(m => m.GarmentListModule)
   },
   {
     path: 'garmentDetail/:id',
     loadChildren: () => import('./pages/garment-detail/garment-detail.module').then(m=> m.GarmentDetailModule)
+  },
+  {
+    path: 'home/garment-discounted-list',
+    loadChildren: () => import('./pages/garment-discounted-list/garment-discounted-list.module').then(m=> m.GarmentDiscountedListModule)
+  },
+  {
+    path: 'garmentDiscountedDetail/:id',
+    loadChildren: () => import('./pages/garment-discounted-detail/garment-discounted-detail.module').then(m=> m.GarmentDiscountedDetailModule)
   },
     {
     path:'toys-list',
@@ -45,7 +69,15 @@ const routes: Routes = [
   {
     path:'toysDetail/:id',
     loadChildren: () => import('./pages/toys-detail/toys-detail.module').then(m=> m.ToysDetailModule)
-  },  
+  }, 
+  {
+    path: 'home/toys-discounted-list',
+    loadChildren: () => import('./pages/toys-discounted-list/toys-discounted-list.module').then(m=> m.ToysDiscountedListModule)
+  },
+  {
+    path: 'toysDiscountedDetail/:id',
+    loadChildren: () => import('./pages/toys-discounted-detail/toys-discounted-detail.module').then(m=> m.ToysDiscountedDetailModule)
+  }, 
   {
     path: 'login',
     loadChildren: () => import('./pages/user/login/login.module').then(m => m.LoginModule)
