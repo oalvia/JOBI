@@ -79,9 +79,29 @@ export class UserServiceService {
     const checkUser = localStorage.getItem(TOKEN_KEY);
     return checkUser ? JSON.parse(checkUser).name : null;
   }
+
+  public getUserSurname(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).surname : null;
+  }
+
+  public getUserEmail(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).email : null;
+  }
   public getUserId(): string | null {
     const checkUser = localStorage.getItem(TOKEN_KEY);
     return checkUser ? JSON.parse(checkUser).id : null;
+  }
+
+  public getUserImage(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).image : null;
+  }
+
+  public getUserPhone(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).phone : null;
   }
 
 }

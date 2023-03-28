@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
   },
   {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule)
+  },
+  {
     path: 'home/book-discounted-list',
     loadChildren: () => import('./pages/book-discounted-list/book-discounted-list.module').then(m=> m.BookDiscountedListModule)
   },
