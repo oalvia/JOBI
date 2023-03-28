@@ -17,6 +17,8 @@ body{
     font-family: Helvetica;
     background-color: var(--bg-color);
     color: var(--font-color-main);
+    overflow-x: hidden;
+     
 }
 h1,
 h2,
@@ -30,6 +32,7 @@ p {
 i{
     color: var(--font-color-main);
 }
+
 a{
   
     text-decoration: none;

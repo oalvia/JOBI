@@ -7,6 +7,7 @@
 .wrap__header_icon{
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 
@@ -77,6 +78,7 @@
 @media screen and (min-width: 320px) and (max-width: 578px){
   .wrap{
     align-items: center;
+    padding-top: 10px;
   }
   .toggle-menu{
     position: absolute;
@@ -93,6 +95,13 @@
     padding-right: 0px;
     flex-direction: column;
 
+  }
+  .header__nav{
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding-top: 19px;
+    cursor: pointer;
   }
  
 
