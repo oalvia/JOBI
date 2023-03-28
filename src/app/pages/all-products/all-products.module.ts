@@ -6,6 +6,13 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, '../assets/public/i18n/', '.json');}
 
 
 @NgModule({
@@ -19,7 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RouterModule,
     SharedModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ],
   exports: [
     AllProductsComponent

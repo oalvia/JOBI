@@ -3,13 +3,13 @@
     <button
     class="addButton"
     (click)="sort('asc')"
-    >Precio <span class="fa-solid fa-caret-up"></span></button>
+    >{{'price'|translate}}<span class="fa-solid fa-caret-up"></span></button>
   </ng-container>
   <ng-container *ngIf="price === 'asc'">
     <button
     class="addButton"
     (click)="sort('desc')"
-    >Precio <span class="fa-solid fa-caret-down"></span></button>
+    >{{'price'|translate}}<span class="fa-solid fa-caret-down"></span></button>
   </ng-container>
 
   <!-- <app-sort
@@ -31,8 +31,8 @@ class="pagination"
   <pagination-controls 
   (pageChange)="page = $event" 
   id="foo"
-  previousLabel="Previous"
-  nextLabel="Next"
+  previousLabel="{{'previousLabel'|translate}}"
+  nextLabel="{{'nextLabel'|translate}}"
   >
   </pagination-controls>
 </div>

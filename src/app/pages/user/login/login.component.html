@@ -1,7 +1,7 @@
 <div
 class="form"
 >
-<p>INICIA SESION</p>
+<p>{{'login'|translate}}</p>
     <form
     *ngIf="logForm"
     (submit)="sendFormulario()"
@@ -11,40 +11,40 @@ class="form"
         <input
         name="email"
         formControlName="email"
-        placeholder="Introduzca su email" 
+        placeholder="{{'enteremail'|translate}}" 
         class="form__content-email"
         type="text">
         <p
     *ngIf="!logForm.get('email')?.valid 
       && logForm.get('email')?.dirty 
       && logForm.get('email')?.errors?.['required']"
-  >El valor está requerido</p>
+  >{{'value_req'|translate}}</p>
   <p
     *ngIf="!logForm.get('email')?.valid 
       && logForm.get('email')?.touched 
       && logForm.get('email')?.errors?.['pattern']"
-  >No es un formato de email valido</p>
+  >{{'email_not_valid'|translate}}</p>
         <input
         name="password"
         formControlName="password"
-        placeholder="Introduzca su contraseña" 
+        placeholder="{{'yourpassword'|translate}}"
         class="form__content-password"
         type="password">
         <p
     *ngIf="!logForm.get('password')?.valid 
       && logForm.get('password')?.dirty 
       && logForm.get('password')?.errors?.['required']"
-  >El valor está requerido</p>
+  >{{'value_req'|translate}}</p>
   <p
     *ngIf="!logForm.get('password')?.valid 
       && logForm.get('password')?.dirty 
       && logForm.get('password')?.errors?.['maxlength']"
-  >La contraseña debe tener entre 4 y 12 caracteres</p>
+  >{{'password_req'|translate}}</p>
   <p
     *ngIf="!logForm.get('password')?.valid 
       && logForm.get('password')?.touched  
       && logForm.get('password')?.errors?.['minlength']"
-  >La contraseña debe tener entre 4 y 12 caracteres</p>
+  >{{'password_req'|translate}}</p>
         <p 
         *ngIf="userError"
         class="form__content-error"
@@ -52,12 +52,12 @@ class="form"
         <button
         [disabled]="!logForm.valid"
         type="submit"
-        class="button">ENVIAR</button>
+        class="button">{{'send'|translate}}</button>
     </form>
     <h3
     class="form__content-loginNotUser"
-    >Aun no eres usuario? 
+    >{{'notuseryet'|translate}} 
     <a 
       (click)="goToRegister()"
-    >REGISTRATE</a></h3>
+    >{{'signup'|translate}}</a></h3>
 </div>

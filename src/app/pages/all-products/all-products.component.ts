@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from '../../core/services/products/products.service';
+import { TranslationService } from 'src/app/core/services/translation/translation.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-all-products',

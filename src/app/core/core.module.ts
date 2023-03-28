@@ -9,8 +9,10 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/public/i18n/', '.json');}
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
         },
       })
+    
   ],
   exports: [
     HeaderComponent,

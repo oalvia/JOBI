@@ -9,8 +9,8 @@
     <ul class="header__nav_ul">
       <li class="header__nav_li">
         <a class="header__nav_a" [routerLink]="['book-list']"> {{"books" | translate}} </a>
-        <a class="header__nav_a" [routerLink]="['garment-list']"> {{"garment" | translate}} </a>
-        <a class="header__nav_a" [routerLink]="['videogames']"> {{"videoGames" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['garment-list']"> {{"garments" | translate}} </a>
+        <a class="header__nav_a" [routerLink]="['videogames']"> {{"videogames" | translate}} </a>
         <a class="header__nav_a" [routerLink]="['toys-list']"> {{"toys" | translate}} </a>
         
          <ng-container *ngIf="!logged">
@@ -51,9 +51,9 @@ class="logout"
         <select
         #selectedLang
         (change)="switchLang(selectedLang.value)">
-      <option *ngFor="let language of translate.getLangs()"
+      <option *ngFor="let language of translationService.langs"
       [value]="language"
-      [selected]="language === translate.currentLang">
+      [selected]="language === translationService.currentLang">
       {{ language}}
       </option>
       </select>

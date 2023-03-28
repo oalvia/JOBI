@@ -8,7 +8,7 @@ import { NovedadesComponent } from './component-novedades/novedades.component';
 import { BestSellerComponent } from './component-best-seller/best-seller.component';
 import { SpanComponent } from './component-span/span.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 
@@ -27,6 +27,9 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    TranslateModule
+  ],
+  providers: [
   ]
   
 })

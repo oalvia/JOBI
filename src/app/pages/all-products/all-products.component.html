@@ -3,7 +3,7 @@
       type="text"
       class="searchForm"
       name="searchTerm"
-      placeholder="¿Qué estas buscando?"
+      [placeholder]="'whatlookingfor' | translate"
       [(ngModel)]="term"
     />  
     </div>
@@ -26,8 +26,8 @@
       <pagination-controls
     (pageChange)="page = $event" 
     id="foo"
-    previousLabel="Previous"
-    nextLabel="Next"
+    previousLabel="{{'previousLabel'|translate}}"
+    nextLabel="{{'nextLabel'|translate}}"
     >
     </pagination-controls>
     </div>
