@@ -9,7 +9,7 @@ import { Component, HostListener, Inject } from '@angular/core';
 export class ScrollToTopComponent {
 
   public shouldShowButton?: boolean = false;
- public scrollHeight: number = 1000;
+ public scrollHeight: number = 500;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
  
