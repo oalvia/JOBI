@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     BookListRoutingModule,
     RouterModule,
     SharedModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ],
   exports: [
     BookListComponent

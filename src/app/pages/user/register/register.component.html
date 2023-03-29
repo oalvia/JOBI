@@ -2,7 +2,7 @@
 <div
 class="form"
 >
-<p>CREAR CUENTA</p>
+<p>{{'createacc'|translate}}</p>
     <div>
       <img 
       *ngIf="selectedAvatar"
@@ -19,48 +19,48 @@ class="form"
         <input
         name="name"
         formControlName="name"
-        placeholder="Introduzca su nombre" 
+        placeholder="{{'yourname'|translate}}" 
         class="form__content-name"
         type="text">
         <p
       *ngIf="!regForm.get('name')?.valid 
         && regForm.get('name')?.dirty  
         && regForm.get('name')?.errors?.['required']"
-    >El valor está requerido</p>
+    >{{'value_req'|translate}}</p>
         <input
         name="surname"
         formArrayName="surname"
-        placeholder="Introduzca sus apellidos" 
+        placeholder="{{'yourlastname'|translate}}" 
         class="form__content-surname"
         type="text">
         <input
         name="phone"
         formControlName="phone"
-        placeholder="Introduzca su teléfono" 
+        placeholder="{{'yourphone'|translate}}" 
         class="form__content-phone"
         type="text">
         <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.touched 
       && regForm.get('phone')?.errors?.['minlength']"
-  >El teléfono debe tener 9 caracteres</p>
+  >{{'phone_req'|translate}}</p>
   <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.dirty 
       && regForm.get('phone')?.errors?.['maxlength']"
-  >El teléfono debe tener 9 caracteres</p>
+  >{{'phone_req'|translate}}</p>
   <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.dirty 
       && regForm.get('phone')?.errors?.['pattern']"
-  >Solo se pueden usar números en este campo</p>
+  >{{'onlynumbers'|translate}}</p>
         <select
         class="form__content-avatar"
         name="avatar" 
         formControlName="avatar">
             <option 
             class="form__content-option"
-            default value="">Elige tu avatar</option>
+            default value="">{{'sel_svatar'|translate}}</option>
             <option
             class="form__content-option"
             *ngFor="let avatar of avatares; let i = index"
@@ -69,40 +69,40 @@ class="form"
         <input
         name="email"
         formControlName="email"
-        placeholder="Introduzca su email" 
+        placeholder="{{'enteremail'|translate}}" 
         class="form__content-email"
         type="text">
         <p
     *ngIf="!regForm.get('email')?.valid 
       && regForm.get('email')?.dirty 
       && regForm.get('email')?.errors?.['required']"
-  >El valor está requerido</p>
+  >{{'value_req'|translate}}</p>
   <p
     *ngIf="!regForm.get('email')?.valid 
       && regForm.get('email')?.touched 
       && regForm.get('email')?.errors?.['pattern']"
-  >No es un formato de email válido</p>
+  >{{'email_not_valid'|translate}}</p>
         <input
         name="password"
         formControlName="password"
-        placeholder="Introduzca su contraseña" 
+        placeholder="{{'yourpassword'|translate}}" 
         class="form__content-password"
         type="password">
         <p
     *ngIf="!regForm.get('password')?.valid 
       && regForm.get('password')?.dirty 
       && regForm.get('password')?.errors?.['required']"
-  >El valor está requerido</p>
+  >{{'value_req'|translate}}</p>
   <p
     *ngIf="!regForm.get('password')?.valid 
       && regForm.get('password')?.dirty 
       && regForm.get('password')?.errors?.['maxlength']"
-  >La contraseña debe tener entre 4 y 12 caracteres</p>
+  >{{'password_req'|translate}}</p>
   <p
     *ngIf="!regForm.get('password')?.valid 
       && regForm.get('password')?.touched  
       && regForm.get('password')?.errors?.['minlength']"
-  >La contraseña debe tener entre 4 y 12 caracteres</p>
+  >{{'password_req'|translate}}</p>
         <p 
         *ngIf="userError"
         class="form__content-error"
@@ -110,7 +110,7 @@ class="form"
         <button
         [disabled]="!regForm.valid"
         type="submit"
-        class="button">ENVIAR</button>
+        class="button">{{'send'|translate}}</button>
     </form>
 
 </div>

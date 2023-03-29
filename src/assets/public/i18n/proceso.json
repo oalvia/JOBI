@@ -1,0 +1,27 @@
+// INICIA SESION 
+// placeholder="Introduzca su email"
+// El valor está requerido
+// La contraseña debe tener entre 4 y 12 caracteres
+// ENVIAR
+// Aun no eres usuario?
+// REGISTRATE
+
+
+//   CREAR CUENTA,
+//   placeholder="Introduzca su nombre",
+//   placeholder="Introduzca sus apellidos",
+//   El valor está requerido,
+//   placeholder="Introduzca sus apellidos",
+//   placeholder="Introduzca su telefono",
+//   Solo se pueden usar numeros en este campo,
+//   Elige tu avatar,
+//   placeholder="Introduzca su email",
+//   No es un formato de email valido,
+//   placeholder="Introduzca su contraseña",
+// La contraseña debe tener entre 4 y 12 caracteres
+// ENVIAR
+
+
+// Total :
+// Ir a mi cesta
+

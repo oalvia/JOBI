@@ -2,11 +2,11 @@
     <button
     class="addButton"
     (click)="sortOut()"
-    >Precio ascendente</button>
+    >{{'price_up'|translate}}</button>
   </ng-container>
   <ng-container *ngIf="price === 'asc'">
     <button
     class="addButton"
     (click)="sortOut()"
-    >Precio descendente</button>
+    >{{'price_dwn'|translate}}</button>
   </ng-container>

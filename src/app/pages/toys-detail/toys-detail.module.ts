@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToysDetailRoutingModule } from './toys-detail-routing.module';
@@ -14,7 +15,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     ToysDetailRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ]
 })
 export class ToysDetailModule { }
