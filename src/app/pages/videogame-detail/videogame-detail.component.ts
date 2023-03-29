@@ -14,7 +14,6 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 })
 export class VideogameDetailComponent {
 
-  //public videogame?: Videogames;
   public product?: Product;
   myCart$ = this.cartService.myCart$;
   public products: Product[] = [];

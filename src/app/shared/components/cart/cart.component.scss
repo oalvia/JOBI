@@ -99,3 +99,15 @@
     padding: 1rem;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 578px){
+  .show{
+    width: 97%;
+  }
+
+  .product__wrapper{
+    .cart-btn{
+      width: 110px;
+    }
+  }
+}

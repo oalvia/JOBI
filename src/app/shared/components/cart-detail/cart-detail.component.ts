@@ -85,6 +85,8 @@ export class CartDetailComponent implements OnInit{
       "user": userId,
       "total": total
   };
+    this.router.navigate(['account']);
     return this.cartService.sendOrder(newOrder).subscribe();
+
   }
 }
