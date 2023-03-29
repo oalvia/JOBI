@@ -2,6 +2,7 @@ import { CartDetailComponent } from './shared/components/cart-detail/cart-detail
 import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth/auth.guard';
 
 
 const routes: Routes = [
@@ -91,12 +92,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/user/register/register.module').then(m => m.RegisterModule)
   },
   {
+    path: 'products',
+    loadChildren: () => import('./pages/all-products/all-products.module').then(m => m.AllProductsModule)
+  },
+  {
     path: 'cart',
     component: CartComponent
   },
   {
     path: 'cart-detail',
-    component: CartDetailComponent
+    component: CartDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '*',

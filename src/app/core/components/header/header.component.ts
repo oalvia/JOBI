@@ -2,6 +2,7 @@ import { CartService } from './../../services/cart/cart.service';
 import { UserServiceService } from './../../services/user/user-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslationService } from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -14,13 +15,14 @@ export class HeaderComponent implements OnInit {
   public logOut: boolean = false;
   public viewCart: boolean = false;
   public user?: string | null;
-
+  public currentLang = '';
   
   
   constructor(
     private router: Router,
     private userService: UserServiceService,
-    private cartService: CartService
+    private cartService: CartService,
+    public translationService: TranslationService,
   ){
     
   }
@@ -53,4 +55,8 @@ export class HeaderComponent implements OnInit {
     const totalProducts = this.cartService.totalNumProducts();
     return totalProducts;
   }
+  public switchLang(lang: string)
+    {
+     return this.translationService.switchLang(lang)
+    }
 }

@@ -32,21 +32,24 @@
           <p class="cart__items-num">{{ totalNumProducts() }}</p>
         </div>
         <span class="fa-solid fa-cart-shopping"></span>
-      </div>
+     </div>
+     <div>
       <a [routerLink]="['products']">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </a>
-      <!-- <select 
-      #selectedLang (change)="switchLang(selectedLang.value)">
-        <option
-          *ngFor="let language of translationService.langs"
+        <span class="fa-solid fa-magnifying-glass"></span>
+     </a>
+     </div>
+          </li>
+          <li>
+            <select
+            #selectedLang
+            (change)="switchLang(selectedLang.value)">
+          <option *ngFor="let language of translationService.langs"
           [value]="language"
-          [selected]="language === translationService.currentLang"
-        >
-          {{ language }}
-        </option>
-      </select> -->
-    </div>
+          [selected]="language === translationService.currentLang">
+          {{ language}}
+          </option>
+          </select>
+        </li>
   </div>
 </div>
 
@@ -54,29 +57,16 @@
   <div class="toggle-menu" id="toggle-menu">
     <i class="fa-solid fa-bars"></i>
   </div>
-
   <nav class="header__nav">
     <ul class="header__nav_ul" id="header__nav_ul">
       <li class="header__nav_li">
-        <a class="header__nav_a" 
-        routerLinkActive="activated"
-        [routerLink]="['book-list']"> Libros </a>
-      </li>
-      <li class="header__nav_li">
-        <a class="header__nav_a" 
-        routerLinkActive="activated"
-        [routerLink]="['garment-list']"> Ropa </a>
-      </li>
-      <li class="header__nav_li">
-        <a class="header__nav_a"
-        routerLinkActive="activated"
-         [routerLink]="['videogames']"> Videojuegos </a>
-      </li>
-      <li class="header__nav_li">
-        <a class="header__nav_a"
-        routerLinkActive="activated"
-         [routerLink]="['toys-list']"> Juguetes </a>
-      </li>
+        <a class="header__nav_a" [routerLink]="['book-list']"> {{"books" | translate}} </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['garment-list']"> {{"garments" | translate}} </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['videogames']"> {{"videogames" | translate}} </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['toys-list']"> {{"toys" | translate}} </a></li>
     </ul>
   </nav>
   <div class="listCart" [ngClass]="{ show: viewCart }">
