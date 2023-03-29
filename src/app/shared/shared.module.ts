@@ -13,6 +13,7 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
 import { SortComponent } from './components/sort/sort.component';
 import { ProductDiscountedListComponent } from './components/product-discounted-list/product-discounted-list.component';
 import { ProductDiscountedDetailComponent } from './components/product-discounted-detail/product-discounted-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -34,7 +35,8 @@ import { ProductDiscountedDetailComponent } from './components/product-discounte
   imports: [
     CommonModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     CartComponent,
@@ -44,7 +46,9 @@ import { ProductDiscountedDetailComponent } from './components/product-discounte
     ProductDiscountedListComponent,
     ProductDiscountedDetailComponent,
     SortPipe,
-    SortComponent
+    SortComponent,
+    TranslateModule,
+    SearchPipe
   ]
 })
 export class SharedModule { }

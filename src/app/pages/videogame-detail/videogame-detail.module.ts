@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -14,7 +15,8 @@ import { VideogameDetailComponent } from './videogame-detail.component';
     CommonModule,
     VideogameDetailRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ]
 })
 export class VideogameDetailModule { }

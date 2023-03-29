@@ -92,6 +92,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/user/register/register.module').then(m => m.RegisterModule)
   },
   {
+    path: 'products',
+    loadChildren: () => import('./pages/all-products/all-products.module').then(m => m.AllProductsModule)
+  },
+  {
     path: 'cart',
     component: CartComponent
   },

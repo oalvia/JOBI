@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from './../../shared/shared.module';
 import { RouterLink, RouterModule } from '@angular/router';
@@ -16,7 +17,8 @@ import { GarmentListComponent } from './garment-list.component';
     GarmentListRoutingModule,
     RouterModule,
     SharedModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ],
   exports: [
     GarmentListComponent

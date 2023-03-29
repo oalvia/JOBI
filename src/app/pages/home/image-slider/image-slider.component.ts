@@ -1,22 +1,25 @@
-import { ProductsService } from './../../../core/services/products/products.service';
 import { Component, OnDestroy, OnInit, Input } from '@angular/core';
-import { interval, Observable, startWith, Subject, switchMap, timer } from 'rxjs';
+import {
+  interval,
+  Observable,
+  startWith,
+  Subject,
+  switchMap,
+  timer,
+} from 'rxjs';
 import { SlideInterface } from './models/slide.models';
 
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.scss']
+  styleUrls: ['./image-slider.component.scss'],
 })
-export class ImageSliderComponent implements OnInit, OnDestroy{
-
+export class ImageSliderComponent implements OnInit, OnDestroy {
   // @Input() slides: SlideInterface[] = [];
- 
+
   public slides: SlideInterface[];
 
-  constructor( 
-    private productsService: ProductsService
-  ){
+  constructor() {
     this.slides = [
       { url: '/assets/public/img/slide_book_2.jpg', title: 'image1'},
       { url: '/assets/public/img/slide_garment_3.jpg', title: 'image4' },
@@ -30,10 +33,8 @@ export class ImageSliderComponent implements OnInit, OnDestroy{
       { url: '/assets/public/img/slide_garment_1.jpg', title: 'image4' }, 
       { url: '/assets/public/img/slide_videogames_3.jpg', title: 'image4' }, 
       { url: '/assets/public/img/slide_toy_3.jpg', title: 'image4' }, 
-      
-    ]
+    ];
   }
-   
 
   currentIndex: number = 0;
   timeoutId?: number;
@@ -76,5 +77,5 @@ export class ImageSliderComponent implements OnInit, OnDestroy{
   getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
   }
-
 }
+

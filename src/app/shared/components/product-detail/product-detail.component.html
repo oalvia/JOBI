@@ -13,36 +13,40 @@
         <ng-container *ngIf="product.category === 'libros'">
             <p class="card-detail__content__type"> {{ product.type }}</p>
             <p class="card-detail__content__author">{{ product.author }}</p>
-            <p class="card-detail__content__pages">Nº de páginas: {{ product.pages }}</p>
-            <p class="card-detail__content__editorial">Editorial: {{ product.editorial }}</p>
-            <p class="card-detail__content__languague">Idioma: {{ product.languague }}</p>
-            <p class="card-detail__content__bookbinding">Encuadernación: {{ product.bookbinding }}</p>
-            <p class="card-detail__content__year">Año de edición: {{ product.yearEdition }}</p>
+            <p class="card-detail__content__pages">{{'totalpages'|translate}}{{ product.pages }}</p>
+            <p class="card-detail__content__editorial">{{'editorial'|translate}}{{ product.editorial }}</p>
+            <p class="card-detail__content__languague">{{'language'|translate}}{{ product.languague }}</p>
+            <p class="card-detail__content__bookbinding">{{'binbing'|translate}}{{ product.bookbinding }}</p>
+            <p class="card-detail__content__year">{{'editionyear'|translate}}{{ product.yearEdition }}</p>
             <p class="card-detail__content__isbn">ISBN: {{ product.isbn }}</p>
         </ng-container>
 
-        <p class="card-detail__content__category">categoria: {{ product.category }}</p>
+        <p class="card-detail__content__category">{{'category'|translate}}{{ product.category }}</p>
 
         <ng-container *ngIf="product.category === 'ropa'">
-            <p class="card-detail__content__size">Talla: {{ product.size }}</p>
+            <p class="card-detail__content__size">{{'size'|translate}}{{ product.size }}</p>
             <p class="card-detail__content__color">Color: {{ product.color }}</p>
         </ng-container>
 
         <ng-container *ngIf="product.category === 'juguetes'">
-            <p class="card-detail__content__brand">{{ product.brand }}</p>
-            <p class="card-detail__content__decades">{{ product.decades }}</p>
-            <p class="card-detail__content__age">{{ product.age }}</p>
+            <p class="card-detail__content__brand">{{'producedby'|translate}}{{ product.brand }}</p>
+            <p class="card-detail__content__decades">{{'producedduring'|translate}}{{ product.decades }}</p>
+            <p class="card-detail__content__age">{{'apt_to'|translate}}{{ product.age }}{{'years'|translate}}.</p>
+            <p class="card-detail__content__hidden">{{'subcat'|translate}}{{ product.subcategory }} </p>
+            <p class="card-detail__content__hidden">{{'tags'|translate}}{{ product.tags }} </p>
+            <p class="card-detail__content__stock">{{'stock'|translate}}{{ product.stock }} </p>
+            <p class="card-detail__content__hidden">{{'mater'|translate}}{{ product.materials }} </p>
         </ng-container>
 
         <ng-container *ngIf="product.category === 'videojuegos'">
-            <p class="card-detail__content__plataforma">Plataforma: {{ product.platform }}</p>
+            <p class="card-detail__content__plataforma">{{'platform'|translate}}{{ product.platform }}</p>
         </ng-container>
 
 
         <div class="div-buttons">
 
-            <button class="cart-btn" (click)="backList()">Volver</button>
-            <button class="cart-btn" (click)="addCart()">Añadir <span
+            <button class="cart-btn" (click)="backList()">{{'back'|translate}}</button>
+            <button class="cart-btn" (click)="addCart()">{{'add'|translate}}<span
                     class="fa-sharp fa-solid fa-basket-shopping"></span></button>
         </div>
     </div>

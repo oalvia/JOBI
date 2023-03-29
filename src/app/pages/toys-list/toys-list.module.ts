@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ToysListRoutingModule,
     RouterModule,
     SharedModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ],
   exports: [
     ToysListComponent

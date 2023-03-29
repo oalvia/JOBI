@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     VideogameDiscountedListRoutingModule,
     SharedModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ]
 })
 export class VideogameDiscountedListModule { }
