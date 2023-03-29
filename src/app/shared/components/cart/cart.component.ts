@@ -1,7 +1,6 @@
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from '../../../core/services/cart/cart.service';
-import { Products } from './../../../core/services/cart/ApiProducts.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,6 +14,7 @@ export class CartComponent implements OnInit {
   public products: Product[] = [];
   public total: number = 0;
   public viewCart: boolean = false;
+  @Output() public notCart: EventEmitter<void> = new EventEmitter<void>;
 
   constructor(
     private router: Router,
@@ -62,7 +62,16 @@ export class CartComponent implements OnInit {
     return totalProducts;
   }
 
+public none(){
+  this.viewCart = !this.viewCart
+}
+
+  public notCartfunc(){
+    this.notCart.emit();
+  }
+
   public onToggleCart(){
     this.viewCart = !this.viewCart;
   }
+
 }

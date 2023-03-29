@@ -15,7 +15,7 @@
         </div>
     
     <div class="productCart__total">
-        <p>{{ totalProduct(product.price, product.stock) }}</p>
+        <p>{{ totalProduct(product.price, product.stock).toFixed(2) }}€</p>
     </div>
     <div class="productCart__buttons">
         <div class="productCart__buttons-operators">
