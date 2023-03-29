@@ -41,5 +41,28 @@
   "sel_svatar": "Elige tu avatar",
   "email_not_valid": "No es un formato de email válido",
   "yourpassword": "Introduzca su contraseña",
-  "gotobasket": "Ir a mi cesta"
+  "gotobasket": "Ir a mi cesta",
+  "buy":"Comprar",
+  "add":"Añadir",
+  "totalpages":"Nº de páginas:",
+  "editorial":"Editorial: ",
+  "language":"Idioma: ",
+  "binbing":"Encuadernación: ",
+  "editionyear":"Año de edición: ",
+  "category":"Categoria",
+  "size":"Talla: ",
+  "producedby":"Producido por ",
+  "producedduring":"Producido durante el período ",
+  "apt_to":"Apto para ",
+  "years":"años de edad. ",
+  "subcat":"Subcategoria: ",
+  "tags": "Etiquetas: ",
+  "stock":"Disponibilidad: ",
+  "mater":"Materiales: ",
+  "platform":"Platforma",
+  "back":"Volver",
+  "notfound":"Producto No Encontrado"
+
+
+
 }

@@ -41,5 +41,26 @@
   "sel_svatar": "Choose your avatar",
   "email_not_valid": "Not a valid email format",
   "yourpassword": "Enter your password",
-  "gotobasket": "Go to my basket"
+  "gotobasket": "Go to my basket",
+  "buy":"Buy",
+  "add":"Add",
+  "totalpages":"Total pages: ",
+  "editorial":"Editorial: ",
+  "language":"Language: ",
+  "binbing":"Book binding: ",
+  "editionyear":"Year of edition: ",
+  "category":"Category: ",
+  "size":"Size: ",
+  "producedby":"Produced by ",
+  "producedduring":"Produced during the period ",
+  "apt_to":"Apt to ",
+  "years":"years old. ",
+  "subcat":"Subcategory: ",
+  "tags": "Tags",
+  "stock":"Stock: ",
+  "mater":"Materials: ",
+  "platform":"Platform",
+  "back":"Go back",
+  "notfound":"Product Not Found"
+
 }
